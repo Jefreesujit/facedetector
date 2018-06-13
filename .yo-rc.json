@@ -1,0 +1,11 @@
+{
+  "@jefreesujit/generator-react-basic": {
+    "promptValues": {
+      "username": "jefreesujit",
+      "repoUrl": "https://github.com/Jefreesujit/facedetector",
+      "authorName": "Jefree Sujit",
+      "authorEmail": "e.jefree110@gmail.com",
+      "authorUrl": "https://jefreesujit.github.io/"
+    }
+  }
+}
