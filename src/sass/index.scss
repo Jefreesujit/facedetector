@@ -1,3 +1,4 @@
+@import 'materialize.min.css';
 
 html {
   line-height: 1.5;
@@ -11,12 +12,16 @@ html {
     box-sizing: border-box;
   }
 
+  .row {
+    margin-bottom: 5px;
+  }
+
   body {
     margin: 0;
   }
 
   header {
-    padding-top: 10px;
+    padding-top: 7px;
     background: #26a69a;
     border-bottom: 4px solid #eaeaea;
     position: relative;
@@ -27,7 +32,7 @@ html {
 
     .page-header {
       text-align: center;
-      font-size: 40px;
+      font-size: 38px;
       font-weight: 300;
       color: #fff;
       -webkit-font-smoothing: antialiased;
@@ -39,7 +44,7 @@ html {
   }
   
   .page-container {
-    min-height: 100vh;
+    min-height: calc(100vh - 125px);
 
     .left-pane, .right-pane {
       margin: 5%;
@@ -62,6 +67,42 @@ html {
     z-index: 100;
   }
 }
+
+.btn.upload-btn {
+	float: none;
+  padding: 0px 30px;
+  font-size: 20px;
+  white-space: nowrap;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+.face-image-container {
+  text-align: center;
+
+  .display-img {
+    object-fit: contain;
+  }
+  .face {
+    position: absolute;
+    border: 1px solid yellow;
+    background: yellow;
+    opacity: 0.5;
+  }
+  .eye {
+    position: absolute;
+    border: 1px solid red;
+    background: red;
+    opacity: 0.3;
+  }
+  .mouth {
+    position: absolute;
+    border: 1px solid blue;
+    background: blue;
+    opacity: 0.3;
+  }
+}
+
 
 
 
