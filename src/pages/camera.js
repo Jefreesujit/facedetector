@@ -1,14 +1,12 @@
 import React from "react";
-
-const styles = {
-  fontFamily: "sans-serif",
-  textAlign: "center"
-};
+import ReactDOM from 'react-dom';
 
 class FaceCamera extends React.Component {
-  _videoRef = video => {
-    this.video = video;
-  };
+  constructor () {
+    super();
+
+    this.faceDetector = new window.FaceDetector();
+  }
 
   componentWillUnmount() {
     clearInterval(this.inverval);
@@ -19,56 +17,47 @@ class FaceCamera extends React.Component {
       alert("No webcam!");
       return;
     }
+    this.detectFaces(this.video);
+  }
 
-    if (typeof window.FaceDetector === "undefined") {
-      alert("No face detection!");
-      return;
-    }
+  drawFaces (faces, videoObj) {
+    let faceboxRef = this.facebox;
+    faces.forEach(face => {
+      const { width, height, top, left } = face.boundingBox,
+            {top: posY, left: posX} = videoObj.getBoundingClientRect(),
+            faceBox = ReactDOM.findDOMNode(faceboxRef);
 
-    const video = this.video;
-    const faceDetector = new window.FaceDetector();
+      faceBox.style.cssText = `
+        width: ${width}px;
+        height: ${height}px;
+        top: ${top}px;
+        left: ${left + posX}px;
+      `;
 
+      face.landmarks.forEach((landmark, index) => {
+        const { x, y } = landmark.locations[0],
+              keyName = `${landmark.type}${index}`;
+
+        const div = ReactDOM.findDOMNode(this[keyName]);
+        div.style.cssText = `
+          width: 35%;
+          height: 35%;
+          top: calc(${y - top}px - 15%);
+          left: calc(${x - left}px - 15%);
+        `;
+      });
+    });
+  }
+
+  detectFaces (video) {
     navigator.getUserMedia(
       { audio: false, video: { width: 1280, height: 720 } },
       stream => {
         video.srcObject = stream;
         setTimeout(() => {
           this.inverval = setInterval(async () => {
-            const faces = await faceDetector.detect(video);
-
-            faces.forEach(face => {
-              const { width, height, top, left } = face.boundingBox;
-
-              const faceBox = document.getElementById("facebox");
-
-              faceBox.style.cssText = `
-                position: absolute;
-                z-index: 2;
-                width: ${width}px;
-                height: ${height}px;
-                top: ${top}px;
-                left: ${left}px;
-              `;
-
-              face.landmarks.forEach((landmark, index) => {
-                if (landmark.type !== "eye") {
-                  return;
-                }
-
-                const { x, y } = landmark.locations[0];
-                const div = document.getElementById(`eye-${index}`);
-                div.style.cssText = `
-                  z-index: 2;
-                  width: 35%;
-                  height: 35%;
-                  position: absolute;
-                  background-size: cover;
-                  top: ${y - top - 50}px;
-                  left: ${x - left - 50}px;
-                  background-image: url('https://orig00.deviantart.net/39bb/f/2016/217/1/0/free_googly_eye_by_terrakatski-dacmqt2.png');
-                `;
-              });
-            });
+            const faces = await this.faceDetector.detect(video);
+            await this.drawFaces(faces, video);
           }, 150);
         }, 500);
       },
@@ -78,11 +67,12 @@ class FaceCamera extends React.Component {
 
   render() {
     return (
-      <div id="wrapper" style={{ position: "relative" }}>
-        <video ref={this._videoRef} autoPlay />
-        <div id="facebox">
-          <div id="eye-0" />
-          <div id="eye-1" />
+      <div id="wrapper" className="face-camera" style={{ position: "relative" }}>
+        <video ref={(ref)=> {this.video = ref}} autoPlay />
+        <div ref={(ref)=> {this.facebox = ref}} className="face" >
+          <div ref={(ref)=> {this.eye0 = ref}} className="eye"/>
+          <div ref={(ref)=> {this.eye1 = ref}} className="eye"/>
+          <div ref={(ref)=> {this.mouth2 = ref}} className="mouth"/>
         </div>
       </div>
     );

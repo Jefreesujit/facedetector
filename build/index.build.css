@@ -6065,22 +6065,26 @@ html {
   font-weight: 300;
   text-transform: capitalize; }
 
-.face-image-container {
+.face-image-container, .face-camera {
   text-align: center; }
-  .face-image-container .display-img {
+  .face-image-container .display-img, .face-camera .display-img {
     object-fit: contain; }
-  .face-image-container .face {
+  .face-image-container .face, .face-camera .face {
     position: absolute;
     border: 1px solid yellow;
     background: yellow;
     opacity: 0.5; }
-  .face-image-container .eye {
+  .face-image-container .eye, .face-camera .eye {
+    z-index: 2;
     position: absolute;
     border: 1px solid red;
     background: red;
+    background-size: cover;
     opacity: 0.3; }
-  .face-image-container .mouth {
+  .face-image-container .mouth, .face-camera .mouth {
+    z-index: 2;
     position: absolute;
     border: 1px solid blue;
     background: blue;
+    background-size: cover;
     opacity: 0.3; }

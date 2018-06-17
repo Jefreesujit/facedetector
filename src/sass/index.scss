@@ -77,7 +77,7 @@ html {
   text-transform: capitalize;
 }
 
-.face-image-container {
+.face-image-container, .face-camera {
   text-align: center;
 
   .display-img {
@@ -90,15 +90,19 @@ html {
     opacity: 0.5;
   }
   .eye {
+    z-index: 2;
     position: absolute;
     border: 1px solid red;
     background: red;
+    background-size: cover;
     opacity: 0.3;
   }
   .mouth {
+    z-index: 2;
     position: absolute;
     border: 1px solid blue;
     background: blue;
+    background-size: cover;
     opacity: 0.3;
   }
 }
