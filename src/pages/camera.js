@@ -41,8 +41,6 @@ class FaceCamera extends React.Component {
 
         const div = ReactDOM.findDOMNode(this[keyName]);
         div.style.cssText = `
-          width: 35%;
-          height: 35%;
           top: calc(${y - top}px - 15%);
           left: calc(${x - left}px - 15%);
         `;
@@ -60,7 +58,7 @@ class FaceCamera extends React.Component {
             const faces = await this.faceDetector.detect(video);
             await this.drawFaces(faces, video);
           }, 150);
-        }, 500);
+        }, 300);
       },
       err => {}
     );

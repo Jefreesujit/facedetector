@@ -27,8 +27,6 @@ class FaceImage extends React.Component {
               facePart = React.createElement('div', {
                 style: {
                   left: `calc(${x - left}px - 15%)`,
-                  width: '40%',
-                  height: '30%',
                   top: `calc(${y - top}px - 15%)`
                 },
                 className: part.type
@@ -64,7 +62,6 @@ class FaceImage extends React.Component {
   }
 
   componentDidMount () {
-    console.log(this.image);
     setTimeout(() => {
       this.detectFaces(this.image);
     }, 100);

@@ -6064,7 +6064,7 @@ html {
 .face-app-container {
   margin: 30px; }
   .face-app-container .app-section {
-    margin: 5%; }
+    margin: 3%; }
     .face-app-container .app-section .file-field input[type=file] {
       width: 25%;
       left: 38%; }
@@ -6100,6 +6100,8 @@ html {
     position: absolute;
     border: 1px solid red;
     background: red;
+    width: 40%;
+    height: 30%;
     background-size: cover;
     opacity: 0.3; }
   .face-image-container .mouth, .face-camera .mouth {
@@ -6107,5 +6109,7 @@ html {
     position: absolute;
     border: 1px solid blue;
     background: blue;
+    width: 40%;
+    height: 35%;
     background-size: cover;
     opacity: 0.3; }

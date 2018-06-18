@@ -78,7 +78,7 @@ html {
   margin: 30px;
 
   .app-section {
-    margin: 5%;
+    margin: 3%;
 
     .file-field input[type=file] {
       width: 25%;
@@ -126,6 +126,8 @@ html {
     position: absolute;
     border: 1px solid red;
     background: red;
+    width: 40%;
+    height: 30%;
     background-size: cover;
     opacity: 0.3;
   }
@@ -134,6 +136,8 @@ html {
     position: absolute;
     border: 1px solid blue;
     background: blue;
+    width: 40%;
+    height: 35%;
     background-size: cover;
     opacity: 0.3;
   }
