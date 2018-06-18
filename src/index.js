@@ -14,9 +14,9 @@ class App extends React.Component {
     return (
       <Router>
         <Provider>
-          <Route path="/" component={Home} />
-          <Route path="/image" component={FaceImage} />
-          <Route path="/camera" component={FaceCamera} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/image" component={FaceImage} />
+          <Route exact path="/camera" component={FaceCamera} />
         </Provider>
       </Router>
     );
