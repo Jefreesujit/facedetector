@@ -1,0 +1,151 @@
+@import 'materialize.min.css';
+
+html {
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: rgba(0,0,0,0.87);
+  scroll-behavior: smooth;
+
+  .col {
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  .row {
+    margin-bottom: 5px;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  header {
+    padding-top: 7px;
+    background: #26a69a;
+    border-bottom: 4px solid #eaeaea;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+
+    .page-header {
+      text-align: center;
+      font-size: 38px;
+      font-weight: 300;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
+  .pane-title {
+    margin-bottom: 10px;
+  }
+  
+  .page-container {
+    min-height: calc(100vh - 125px);
+
+    .left-pane, .right-pane {
+      margin: 5%;
+      float: left;
+      width: 40%;
+      box-sizing: border-box;
+    }
+    .center-pane {
+      margin: 5% 15%;
+    }
+
+    .message {
+      font-size: 20px;
+      font-weight: 300;
+      margin: 20px;
+    }
+  }
+
+  footer {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #e0e0e0;
+    text-align: center;
+    z-index: 100;
+  }
+}
+
+.face-app-container {
+  margin: 30px;
+
+  .app-section {
+    margin: 3%;
+
+    .file-field input[type=file] {
+      width: 25%;
+      left: 38%;
+    }
+
+    .btn.upload-btn {
+      float: none;
+      padding: 10px 40px;
+      font-size: 24px;
+      height: 60px;
+      white-space: nowrap;
+      font-weight: 300;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.face-camera {
+  position: relative;
+}
+
+.face-image-container, .face-camera {
+  text-align: center;
+
+  .back-btn {
+    position: absolute;
+    left: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
+  .display-img {
+    object-fit: contain;
+  }
+  .face {
+    position: absolute;
+    border: 1px solid yellow;
+    background: yellow;
+    opacity: 0.5;
+  }
+  .eye {
+    z-index: 2;
+    position: absolute;
+    border: 1px solid red;
+    background: red;
+    width: 40%;
+    height: 35%;
+    background-size: cover;
+    opacity: 0.3;
+  }
+  .mouth {
+    z-index: 2;
+    position: absolute;
+    border: 1px solid blue;
+    background: blue;
+    width: 40%;
+    height: 35%;
+    background-size: cover;
+    opacity: 0.3;
+  }
+}
+
+
+
+
+
+
+
