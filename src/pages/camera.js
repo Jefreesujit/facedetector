@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from 'react-dom';
+import { withRouter } from 'react-router-dom';
 
 class FaceCamera extends React.Component {
   constructor () {
@@ -65,9 +66,14 @@ class FaceCamera extends React.Component {
     );
   }
 
+  backHandler = () => {
+    this.props.history.goBack();
+  }
+
   render() {
     return (
-      <div id="wrapper" className="face-camera" style={{ position: "relative" }}>
+      <div id="wrapper" className="face-camera" onClick={this.backHandler}>
+        <div className="back-btn btn">Go Back</div>
         <video ref={(ref)=> {this.video = ref}} autoPlay />
         <div ref={(ref)=> {this.facebox = ref}} className="face" >
           <div ref={(ref)=> {this.eye0 = ref}} className="eye"/>
@@ -81,4 +87,4 @@ class FaceCamera extends React.Component {
 
 FaceCamera.displayName = 'FaceCamera';
 
-export default FaceCamera;
+export default withRouter(FaceCamera);

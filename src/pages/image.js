@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { Consumer } from '../components/imgContext';
 
 class FaceImage extends React.Component {
@@ -66,12 +67,17 @@ class FaceImage extends React.Component {
     console.log(this.image);
     setTimeout(() => {
       this.detectFaces(this.image);
-    }, 1000);
+    }, 100);
+  }
+
+  backHandler = () => {
+    this.props.history.goBack();
   }
 
   render () {
     return (
       <div className="face-image-container">
+        <div className="back-btn btn" onClick={this.backHandler}>Go Back</div>
         <div id="imgWrapper" className="col s12 input-image">
           <Consumer>
             {(context) => {
@@ -92,4 +98,4 @@ class FaceImage extends React.Component {
 
 FaceImage.displayName = 'FaceImage';
 
-export default FaceImage;
+export default withRouter(FaceImage);

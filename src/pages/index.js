@@ -40,10 +40,11 @@ class Home extends React.Component {
       <div className="face-app-container">
         <div className="row center">
           <div className="col s12">
-            <h5 className="light message-box">An Experiment on Google Chrome's face detector API </h5>
+            <h4 className="light message-box">An Experiment on Google Chrome's face detector API </h4>
           </div>
         </div>
-        <div className="row center">
+        <div className="row center app-section">
+          <div className="message">Just try with some photos (with faces, obviously), <br/> the app would identify the faces and draws boxes over it</div>
           <div className="col s12 file-field input-field">
             <div className="btn upload-btn">
               <span>Try with Image</span>
@@ -57,8 +58,12 @@ class Home extends React.Component {
               </Consumer>
             </div>
           </div>
+          <div className="col s12 message">
+              Or try with your own face, live in the camera ;)
+          </div>
           <div className="col s12 input-field">
             <button className="waves-effect upload-btn waves-light btn" id="cam_btn" onClick={this.handleCamera} >Try Live Camera</button>
+            <div className="message small">(Would require permission for camera, dont worry we dont record anything!)</div>
           </div>
         </div>
       </div>

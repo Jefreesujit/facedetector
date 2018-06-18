@@ -18,11 +18,13 @@ class Provider extends Component {
 	}
 
 	render() {
-		 return <AppProvider value={this.state}>
-			 {this.props.children}
-		 </AppProvider>
-	 }
- }
+		return (
+			<AppProvider value={this.state}>
+				{this.props.children}
+			</AppProvider>
+		);
+	}
+}
 
 export {
 	Provider,

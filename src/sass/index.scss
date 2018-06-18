@@ -55,6 +55,12 @@ html {
     .center-pane {
       margin: 5% 15%;
     }
+
+    .message {
+      font-size: 20px;
+      font-weight: 300;
+      margin: 20px;
+    }
   }
 
   footer {
@@ -68,17 +74,43 @@ html {
   }
 }
 
-.btn.upload-btn {
-	float: none;
-  padding: 0px 30px;
-  font-size: 20px;
-  white-space: nowrap;
-  font-weight: 300;
-  text-transform: capitalize;
+.face-app-container {
+  margin: 30px;
+
+  .app-section {
+    margin: 5%;
+
+    .file-field input[type=file] {
+      width: 25%;
+      left: 38%;
+    }
+
+    .btn.upload-btn {
+      float: none;
+      padding: 10px 40px;
+      font-size: 24px;
+      height: 60px;
+      white-space: nowrap;
+      font-weight: 300;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.face-camera {
+  position: relative;
 }
 
 .face-image-container, .face-camera {
   text-align: center;
+
+  .back-btn {
+    position: absolute;
+    left: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+  }
 
   .display-img {
     object-fit: contain;

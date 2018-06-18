@@ -1,7 +1,7 @@
 {
   "name": "facedetector",
-  "version": "0.0.0",
-  "description": "A React only Component",
+  "version": "1.0.0",
+  "description": "An Experiment on Google Chrome's face detector API",
   "author": "Jefree Sujit <e.jefree110@gmail.com>",
   "license": "SEE LICENSE IN LICENSE",
   "main": "index.html",

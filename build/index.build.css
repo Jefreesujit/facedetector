@@ -6048,6 +6048,10 @@ html {
       box-sizing: border-box; }
     html .page-container .center-pane {
       margin: 5% 15%; }
+    html .page-container .message {
+      font-size: 20px;
+      font-weight: 300;
+      margin: 20px; }
   html footer {
     right: 0;
     bottom: 0;
@@ -6057,16 +6061,33 @@ html {
     text-align: center;
     z-index: 100; }
 
-.btn.upload-btn {
-  float: none;
-  padding: 0px 30px;
-  font-size: 20px;
-  white-space: nowrap;
-  font-weight: 300;
-  text-transform: capitalize; }
+.face-app-container {
+  margin: 30px; }
+  .face-app-container .app-section {
+    margin: 5%; }
+    .face-app-container .app-section .file-field input[type=file] {
+      width: 25%;
+      left: 38%; }
+    .face-app-container .app-section .btn.upload-btn {
+      float: none;
+      padding: 10px 40px;
+      font-size: 24px;
+      height: 60px;
+      white-space: nowrap;
+      font-weight: 300;
+      text-transform: capitalize; }
+
+.face-camera {
+  position: relative; }
 
 .face-image-container, .face-camera {
   text-align: center; }
+  .face-image-container .back-btn, .face-camera .back-btn {
+    position: absolute;
+    left: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 20px; }
   .face-image-container .display-img, .face-camera .display-img {
     object-fit: contain; }
   .face-image-container .face, .face-camera .face {
