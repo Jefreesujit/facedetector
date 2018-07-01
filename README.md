@@ -1,16 +1,5 @@
 # facedetector
-A React only Component
 
-## Install
+An Experiment on Google Chrome's face detector API https://facedetect.netlify.com
 
-```sh
-$ npm install facedetector --save
-```
-
-### Version
-1.0.0
-
-### Summary
-Fill in your details here
-
-
+Just try some images with faces or try your own face in the live camera, the app would identify the faces and draws boxes over it!
