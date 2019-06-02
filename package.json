@@ -20,6 +20,7 @@
   ],
   "dependencies": {
     "react": "^16.3.0",
+    "react-context-redux": "^0.2.1",
     "react-dom": "^16.3.0",
     "react-router-dom": "^4.2.2"
   },
@@ -43,7 +44,7 @@
     "gaze-cli": "^0.2.0",
     "node-sass": "^3.4.2",
     "node-sass-import": "^1.0.0",
-    "npm-run-all": "^1.5.1",
+    "npm-run-all": "^1.8.0",
     "react-context-state": "^0.0.1",
     "vulcanize": "^1.14.8",
     "webpack": "^2.7.0"
@@ -51,7 +52,7 @@
   "scripts": {
     "start": "node index.js",
     "build": "npm-run-all build:js build:css",
-    "build:js": "NODE_ENV=development webpack --progress --color",
+    "build:js": "webpack --progress --color",
     "build:css": "node-sass src/sass/index.scss build/index.build.css --importer node_modules/node-sass-import",
     "build:html": "vulcanize --inline-scripts --inline-css assets/template.html > index.min.html",
     "postversion": "git push --tags origin HEAD",
