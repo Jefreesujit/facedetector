@@ -28,7 +28,7 @@
     "babel": "^6.3.13",
     "babel-cli": "^6.9.0",
     "babel-core": "^6.3.21",
-    "babel-loader": "^6.2.0",
+    "babel-loader": "^9.1.0",
     "babel-plugin-istanbul": "^1.0.2",
     "babel-plugin-react-transform": "^2.0.0-beta1",
     "babel-plugin-transform-class-properties": "^6.3.13",
@@ -47,7 +47,7 @@
     "npm-run-all": "^1.8.0",
     "react-context-state": "^0.0.1",
     "vulcanize": "^1.14.8",
-    "webpack": "^2.7.0"
+    "webpack": "^5.74.0"
   },
   "scripts": {
     "start": "node index.js",
